@@ -1,0 +1,54 @@
+/* navbar.css */
+
+* {
+    box-sizing: border-box; 
+  }
+  
+  .navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 4%; 
+    border-bottom: 1px solid #d3d3d3;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-links, .navbar-logo, .nav-login {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 30px; 
+
+  }
+  .nav-link:hover {
+    color: #D32F2F; /* Change la couleur en rouge sur hover */
+    transform: scale(1.1); /* Agrandir l'élément au survol */
+}
+  .nav-link:active {
+    color: #D32F2F; /* Couleur rouge lors du clic */
+}
+
+  
+  .logoimg {
+    max-width: 25%; /* Ajustez la taille de l'image si nécessaire */
+    max-height: 20%;
+  }
+  
+  .nav-login a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  .nav-login a:hover {
+    color: #D32F2F; 
+    transform: scale(1.1);
+}

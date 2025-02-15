@@ -1,0 +1,114 @@
+/* Conteneur principal */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; /* Hauteur de 90% de la vue */
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Boîte d'inscription */
+  .signup-box {
+    width: 100%;
+    max-width: 450px; /* Boîte plus étroite */
+    padding: 20px; /* Moins d'espacement interne */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: center;
+  }
+  
+  /* Titre */
+  .signup-box h2 {
+    margin-bottom: 15px; /* Réduit l'espace sous le titre */
+    font-size: 1.3rem; /* Taille légèrement réduite */
+    color: #333;
+  }
+  
+  /* Ligne Nom et Prénom */
+  .form-row {
+    display: flex;
+    gap: 10px; /* Moins d'espace entre les champs */
+  }
+  
+  /* Groupe de formulaire */
+  .form-group {
+    flex: 1;
+    margin-bottom: 10px; /* Réduit l'espacement vertical */
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-size: 0.8rem; /* Texte plus petit */
+    color: #666;
+    margin-bottom: 3px; /* Moins d'espace sous le label */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px; /* Réduit la taille des champs */
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  /* Mot de passe avec icône */
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .password-wrapper input {
+    flex: 1;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 8px; /* Plus proche du bord */
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #007BFF;
+  }
+  
+  /* Bouton d'inscription */
+  .signup-button {
+    width: 100%;
+    padding: 8px; /* Bouton plus petit */
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .signup-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Lien vers Login */
+  .login-link {
+    margin-top: 10px; /* Moins d'espace en haut */
+    font-size: 0.8rem; /* Texte plus petit */
+    color: #333;
+  }
+  
+  .login-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-link a:hover {
+    color: #0056b3;
+  }
+  

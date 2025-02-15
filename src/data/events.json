@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "image": "assets/background1.jpg",
+      "title": "Don de sang - Solidarité",
+      "description": "Participez à notre événement annuel pour aider celles et ceux dans le besoin.",
+      "date": "2025-01-25"
+    },
+    {
+      "id": 2,
+      "image": "assets/background1.jpg",
+      "title": "Campagne Santé - Printemps",
+      "description": "Un rendez-vous pour sensibiliser et promouvoir les dons de sang.",
+      "date": "2025-03-15"
+    },
+    {
+      "id": 3,
+      "image": "assets/background1.jpg",
+      "title": "Marathon pour la Vie",
+      "description": "Un événement sportif et caritatif dédié aux dons de sang.",
+      "date": "2025-05-10"
+    }
+  ]
+  

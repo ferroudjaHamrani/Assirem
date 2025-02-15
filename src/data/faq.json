@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "question": "Qui peut donner son sang ?",
+    "answer": "Toute personne âgée de 18 à 70 ans, pesant au moins 50 kg et en bonne santé, peut donner son sang."
+  },
+  {
+    "id": 2,
+    "question": "Combien de fois peut-on donner son sang par an ?",
+    "answer": "Les hommes peuvent donner leur sang jusqu'à 6 fois par an, tandis que les femmes peuvent le faire jusqu'à 4 fois, avec un intervalle de 8 semaines entre deux dons."
+  },
+  {
+    "id": 3,
+    "question": "Est-ce que le don de sang est douloureux ?",
+    "answer": "Le don de sang est généralement indolore. Vous pouvez ressentir une légère piqûre au début, mais l'expérience est rapide et sans douleur."
+  },
+  {
+    "id": 4,
+    "question": "Combien de temps dure un don de sang ?",
+    "answer": "Un don de sang complet prend environ 45 minutes, incluant l'entretien médical et la collation après le don."
+  },
+  {
+    "id": 5,
+    "question": "Puis-je donner mon sang si j’ai été malade récemment ?",
+    "answer": "En cas de maladie récente, il est conseillé d’attendre 14 jours après la fin des symptômes ou du traitement avant de donner son sang."
+  },
+  {
+    "id": 6,
+    "question": "Que devient mon sang après le don ?",
+    "answer": "Le sang est analysé, traité, puis réparti en différents composants (globules rouges, plasma, plaquettes) pour répondre aux besoins des patients."
+  },
+  {
+    "id": 7,
+    "question": "Y a-t-il des risques pour ma santé en donnant mon sang ?",
+    "answer": "Non, donner son sang est sûr. Le matériel utilisé est stérile et à usage unique, éliminant tout risque de contamination."
+  }
+]

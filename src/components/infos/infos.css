@@ -1,0 +1,59 @@
+.Info-cotainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+     flex-direction: column;
+     font-family: Arial, sans-serif;
+    
+}
+
+.Info-cotainer h1 {
+    font-size: 3rem;
+    color: #007BFF; /* Bleu pour le titre */
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: 900; /* Plus gras que "bold" */
+}
+.info-table{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+    background-color: #eaf6ff; /* Bleu clair pour les cartes */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding:50px ;
+}
+
+.desc-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%; /* Uniformise la largeur de chaque bloc */
+    min-width: 250px; /* Largeur maximale définie pour éviter trop d'étirement */
+    text-align: center; /* Centrer le texte pour une apparence équilibrée */
+    gap: 10px;
+}
+
+.info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background-color: #007BFF;
+    border-radius: 15px;
+    padding: 14px;
+    max-width: 70px;
+    margin-bottom: 10px;
+}
+
+.desc-container h3, .desc-container p {
+    margin: 0;
+    padding: 5px 0;
+    word-wrap: break-word; /* Permet de couper les mots longs pour éviter le débordement */
+    width: 100%; /* Assure que le texte n’étend pas la largeur */
+}

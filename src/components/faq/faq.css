@@ -1,0 +1,64 @@
+/* Conteneur principal */
+.faq-container {
+    padding: 20px;
+    max-width: 1200px; /* Plus large pour accueillir deux colonnes */
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .faq-container h2 {
+    font-size: 2rem;
+    color: #B71C1C;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Grille des éléments FAQ */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espacement entre les éléments */
+  }
+  
+  /* Carte FAQ */
+  .faq-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Indique que l'élément est cliquable */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* En-tête de la FAQ */
+  .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-header h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Icônes */
+  .icon {
+    font-size: 1.2rem;
+    color: #007BFF;
+  }
+  
+  /* Réponse FAQ */
+  .faq-answer {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+  }
+  

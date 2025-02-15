@@ -1,0 +1,69 @@
+.footer-container {
+    background-color: #007BFF; /* Couleur de fond */
+    color: #fff; /* Texte blanc */
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Ajout d'un espacement entre les sections */
+  .footer-content {
+    margin-top:4%;
+    margin-left: -8%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+  }
+  
+  /* Section Copyright */
+  .footer-copyright {
+    margin-bottom: 20px;
+  }
+  
+  /* Section Navigation */
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 15px; 
+    
+  }
+  
+  .footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: #B71C1C; /* Couleur dorée au survol */
+  }
+  
+  /* Section Contact */
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-contact .social-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-contact .social-link:hover {
+    color: #B71C1C; /* Couleur dorée au survol */
+  }
+  
+  .social-icon {
+    font-size: 1.2rem;
+    margin-right: 8px; /* Espace entre l'icône et le texte */
+  }
+  

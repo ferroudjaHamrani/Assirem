@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .donation-container {
+    display: flex;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  /* Sidebar */
+  .filter-sidebar {
+    width: 250px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+  }
+  
+  .filter-sidebar h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .filter-sidebar label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .filter-sidebar select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Donations Grid */
+  .donation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-grow: 1;
+  }
+  
+  /* Donation Card */
+  .donation-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .donation-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .donation-card h4 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  .donation-card p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .donation-button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: #B71C1C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .donation-button:hover {
+    background: #8E0000;
+  }
+  

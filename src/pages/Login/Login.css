@@ -1,0 +1,101 @@
+/* Conteneur principal */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Fond gris clair */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Boîte de connexion */
+  .login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    text-align: center;
+  }
+  
+  /* Titre */
+  .login-box h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  /* Groupe de formulaire */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #007BFF; /* Couleur bleue au focus */
+    outline: none;
+  }
+  
+  /* Bouton de connexion */
+  .login-button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3; /* Bleu plus foncé au survol */
+  }
+  
+  /* Réduction automatique des marges pour mobile */
+  @media (max-width: 480px) {
+    .login-box {
+      padding: 20px;
+    }
+  
+    .login-button {
+      font-size: 0.9rem;
+    }
+  }
+  /* Lien vers la page d'inscription */
+.signup-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .signup-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .signup-link a:hover {
+    color: #0056b3; /* Bleu plus foncé au survol */
+  }
+  
