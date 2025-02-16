@@ -1,39 +1,49 @@
-import React, { useState } from 'react';
-import { FaList, FaSearch, FaTrash } from 'react-icons/fa';
+import React, { useState, useEffect, useCallback } from 'react';
+import { FaList, FaSearch } from 'react-icons/fa';
 import SidebarAdm from '../../components/sidebar/sidebar';
+import axios from 'axios';
 import './admin.css';
 
 function PublicationAdmin() {
     const [searchTerm, setSearchTerm] = useState('');
+    const [publications, setPublications] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Adaptation des données pour correspondre au tableau
-    const samplePublications = [
-        { id_publication: 1, nom: 'Dupont', prenom: 'Jean', telephone: '0601020304', dd_don: '2024-02-01', groupe: 'A+', resus: 'Positif', wilaya: 'Alger', commune: 'Bab El Oued' },
-        { id_publication: 2, nom: 'Martin', prenom: 'Sophie', telephone: '0612345678', dd_don: '2024-01-15', groupe: 'O-', resus: 'Négatif', wilaya: 'Oran', commune: 'Es Sénia' },
-        { id_publication: 3, nom: 'Durand', prenom: 'Paul', telephone: '0698765432', dd_don: '2023-12-10', groupe: 'B+', resus: 'Positif', wilaya: 'Constantine', commune: 'El Khroub' }
-    ];
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/post/GetPost', { skip: 0, limit: 10 });
+                setPublications(response.data.results);
+            } catch (error) {
+                setError("Erreur lors de la récupération des données !");
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    const handleSearchChange = (event) => {
+        fetchData();
+    }, []);
+
+    const handleSearchChange = useCallback((event) => {
         setSearchTerm(event.target.value.toLowerCase());
-    };
+    }, []);
 
-    const filteredPublications = samplePublications.filter(
-        publication =>
-            publication.nom.toLowerCase().includes(searchTerm) ||
-            publication.prenom.toLowerCase().includes(searchTerm) ||
-            publication.telephone.includes(searchTerm) ||
-            publication.wilaya.toLowerCase().includes(searchTerm) ||
-            publication.commune.toLowerCase().includes(searchTerm)
+    const filteredPublications = publications.filter(publication =>
+        publication?.nom?.toLowerCase().includes(searchTerm) ||
+        publication?.prenom?.toLowerCase().includes(searchTerm) ||
+        publication?.tel?.includes(searchTerm) ||
+        publication?.wilaya?.toLowerCase().includes(searchTerm) ||
+        publication?.commune?.toLowerCase().includes(searchTerm)
     );
 
     return (
         <div className='admin-page-container1'>
-            
-                <SidebarAdm />
-            
+            <SidebarAdm />
             <div className="admin-container1">
                 <div className="admin-header1">
-                    <h1><FaList /> Liste </h1>
+                    <h1><FaList /> Liste</h1>
                     <div className="search-box1">
                         <button className="search-button1">
                             <FaSearch />
@@ -47,36 +57,44 @@ function PublicationAdmin() {
                     </div>
                 </div>
 
-                <table className="admin-table1">
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>N°Tél</th>
-                            <th>DD Don</th>
-                            <th>Groupe</th>
-                            <th>Résus</th>
-                            <th>Wilaya</th>
-                            <th>Commune</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredPublications.map(publication => (
-                            <tr key={publication.id_publication}>
-                                <td>{publication.nom}</td>
-                                <td>{publication.prenom}</td>
-                                <td>{publication.telephone}</td>
-                                <td>{publication.dd_don}</td>
-                                <td>{publication.groupe}</td>
-                                <td>{publication.resus}</td>
-                                <td>{publication.wilaya}</td>
-                                <td>{publication.commune}</td>
-                               
+                {loading ? (
+                    <p>Chargement des données...</p>
+                ) : error ? (
+                    <p className="error-message">{error}</p>
+                ) : (
+                    <table className="admin-table1">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>N°Tél</th>
+                                <th>DD Don</th>
+                                <th>Groupe</th>
+                                <th>Wilaya</th>
+                                <th>Commune</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {filteredPublications.length > 0 ? (
+                                filteredPublications.map(publication => (
+                                    <tr key={publication._id}>
+                                        <td>{publication.nom}</td>
+                                        <td>{publication.prenom}</td>
+                                        <td>{publication.tel || 'N/A'}</td>
+                                        <td>{publication.date_dernier_don ? new Date(publication.date_dernier_don).toLocaleDateString() : 'N/A'}</td>
+                                        <td>{publication.groupage || 'N/A'}</td>
+                                        <td>{publication.wilaya || 'N/A'}</td>
+                                        <td>{publication.commune || 'N/A'}</td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="7" style={{ textAlign: 'center' }}>Aucune publication trouvée.</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                )}
             </div>
         </div>
     );

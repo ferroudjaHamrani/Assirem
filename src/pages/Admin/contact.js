@@ -1,34 +1,46 @@
-import React, { useState } from 'react';
-import { FaList, FaSearch, FaTrash } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { FaList, FaSearch } from 'react-icons/fa';
 import SidebarAdm from '../../components/sidebar/sidebar';
 import './admin.css';
 
 function ContactAdm() {
     const [searchTerm, setSearchTerm] = useState('');
+    const [contacts, setContacts] = useState([]);
 
-    const samplePublications = [
-        { id_publication: 1, nom: 'Dupont', prenom: 'Jean', telephone: '0601020304', description: 'Contact principal' },
-        { id_publication: 2, nom: 'Martin', prenom: 'Sophie', telephone: '0612345678', description: 'Nouveau contact' },
-        { id_publication: 3, nom: 'Durand', prenom: 'Paul', telephone: '0698765432', description: 'Ancien client' }
-    ];
+    // Récupérer les contacts depuis l'API
+    useEffect(() => {
+        const fetchContacts = async () => {
+            try {
+                const res = await axios.get('http://localhost:5000/contact/getAllContact');
+                if (res.data && Array.isArray(res.data.results)) {
+                    setContacts(res.data.results);  // Prend seulement le tableau des contacts
+                } else {
+                    console.error("Les données reçues ne sont pas un tableau :", res.data);
+                    setContacts([]);
+                }
+            } catch (error) {
+                console.error("Erreur lors de la récupération des contacts", error);
+            }
+        };
+        fetchContacts();
+    }, []);
+    
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value.toLowerCase());
     };
 
-    const filteredPublications = samplePublications.filter(
-        publication =>
-            publication.nom.toLowerCase().includes(searchTerm) ||
-            publication.prenom.toLowerCase().includes(searchTerm) ||
-            publication.telephone.includes(searchTerm) ||
-            publication.description.toLowerCase().includes(searchTerm)
+    const filteredContacts = contacts.filter(
+        contact =>
+            contact.nom_complet.toLowerCase().includes(searchTerm) ||
+            (contact.tel && contact.tel.includes(searchTerm)) ||
+            (contact.description && contact.description.toLowerCase().includes(searchTerm))
     );
 
     return (
         <div className='admin-page-container1'>
-         
-                <SidebarAdm />
-           
+            <SidebarAdm />
             <div className="admin-container1">
                 <div className="admin-header1">
                     <h1><FaList /> Contacts</h1>
@@ -49,24 +61,16 @@ function ContactAdm() {
                     <thead>
                         <tr>
                             <th>Nom Complet</th>
-                            <th>Prénom</th>
                             <th>N°Tél</th>
                             <th>Description</th>
-                           
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredPublications.map(publication => (
-                            <tr key={publication.id_publication}>
-                                <td>{publication.nom}</td>
-                                <td>{publication.prenom}</td>
-                                <td>{publication.telephone}</td>
-                                <td>{publication.description}</td>
-                                {/* <td>
-                                    <button className="reject1" data-tooltip="Supprimer">
-                                        <FaTrash />
-                                    </button>
-                                </td> */}
+                        {filteredContacts.map(contact => (
+                            <tr key={contact._id}>
+                                <td>{contact.nom_complet}</td>
+                                <td>{contact.tel || "Non renseigné"}</td>
+                                <td>{contact.description || "Aucune description"}</td>
                             </tr>
                         ))}
                     </tbody>
